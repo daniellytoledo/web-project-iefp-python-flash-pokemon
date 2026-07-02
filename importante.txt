@@ -2,10 +2,12 @@ ACESSAR O CMD DO WINDOWS E ENTRAR NA PASTA DO PROJETO:
 cd \wamp64\www\web-project-iefp-python-flash-pokemon
 
 PASSO A PASSO (
-    1. criar env pelo cmd  -> python -m venv venv
-    2. ativar o venv       -> venv\Scripts\activate
-    3. instalar o  
-    4. criar a estrutura   -> (
+    1. criar env pelo cmd        -> python -m venv venv
+    2. ativar o venv             -> venv\Scripts\activate
+    3. instalar o flash pelo cmd -> pip install flash
+    4. instalar pymysql pelo cmd -> pip install pymysql
+    5. instalar dotenv pelo cmd  -> pip install python-dotenv
+    6. criar a estrutura         -> (
 
         projeto 
         │
@@ -35,6 +37,10 @@ PASSO A PASSO (
         │ 
         ├── .gitignore
 
+    7. 
 
     )
 )
+
+CRIAR LINK LOCALHOST NO CMD PARA WEB:
+python run.py

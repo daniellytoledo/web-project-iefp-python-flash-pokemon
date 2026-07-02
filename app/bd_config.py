@@ -15,8 +15,8 @@ def conectar_pymysql():
     )
 
 def teste ():
-    sql = "SELECT * FROM pokemon_cards"
-    conexao = conectar_pymysql
+    sql = "SELECT * FROM tbl_cards"
+    conexao = conectar_pymysql()
     cursor = conexao.cursor()
     cursor.execute(sql)
 
