@@ -48,4 +48,4 @@ python run.py
 
 -> CONTINUAR EDITANDO srv, rt e rep de POKEMON_CARDS 
 
--> PAREI NA HOME
+-> 

@@ -14,9 +14,12 @@
     <div class="div_cards">
         {% for pokemon in lista_pokemon %}
             <div class="cards">
-                <a href="{{ url_for('detalhes_card', card_id=id_c) }}"></a>
-                <p class="titulo_card"> {{pokemon.name_c}} </p>
-                <p class="">  </p>
+                <a href="{{ url_for('detalhes_card', card_id=id_c) }}">
+                    <p class="titulo_card"> {{pokemon.name_c}} </p>
+                    <p class="tipo"> {{pokemon.name_t}} </p>
+                    <p class=""> {{pokemon.desc_c}} </p>
+                </a>
             </div>
+        {% endfor %}
     </div>
 {% endblock %}
