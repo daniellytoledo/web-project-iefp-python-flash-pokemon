@@ -1,5 +1,5 @@
 ACESSAR O CMD DO WINDOWS E ENTRAR NA PASTA DO PROJETO:
-cd \wamp64\www\web-project-iefp-python-flash-pokemon
+cd \wamp64\www\web-project-iefp-python-flask-pokemon
 
 PASSO A PASSO (
     1. criar env pelo cmd        -> python -m venv venv

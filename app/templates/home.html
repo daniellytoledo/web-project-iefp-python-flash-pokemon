@@ -14,7 +14,10 @@
     <div class="div_cards">
         {% for pokemon in lista_pokemon %}
             <div class="cards">
-                <a href="{{ url_for('detalhes_card', card_id=id_c) }}">
+                <a href="{{ url_for('pokemon_cards.detalhes', card_id=pokemon.id_c) }}">
+                    <div class="imagem_card">
+                        <!-- <img src="..." alt="{{ pokemon.name_c }}"> vai aqui depois -->
+                    </div>
                     <p class="titulo_card"> {{pokemon.name_c}} </p>
                     <p class="tipo"> {{pokemon.name_t}} </p>
                     <p class=""> {{pokemon.desc_c}} </p>

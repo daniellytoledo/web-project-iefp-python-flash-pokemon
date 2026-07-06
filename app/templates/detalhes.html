@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if dados %}
+        {{ dados.name_c }}
+    {% else %}
+        Carta não encontrada
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if dados %}
+        <div class="detalhes_card">
+            <h1 class="titulo_card">{{ dados.name_c }}</h1>
+            <span class="tipo">{{ dados.name_t }}</span>
+
+            <p class="descricao">{{ dados.desc_c }}</p>
+
+            <p class="hp">HP: {{ dados.hp_c }}</p>
+
+            <a href="{{ url_for('pokemon_cards.homepage') }}">&larr; Voltar</a>
+        </div>
+    {% else %}
+        <p>Essa carta não foi encontrada.</p>
+        <a href="{{ url_for('pokemon_cards.homepage') }}">&larr; Voltar para a home</a>
+    {% endif %}
+{% endblock %}

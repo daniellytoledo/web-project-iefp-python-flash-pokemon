@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "FontePrincipal";
+    src: url("../fonts/PokemonSolid.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =====================================================
+   RESET BÁSICO
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho-pokebola: #E3350D;
+    --preto-suave: #1C1C1E;
+    --branco: #FFFFFF;
+    --fundo: #F4F4F5;
+    --borda: #E0E0E0;
+    --cinza-texto: #6B6B70;
+}
+
+body {
+    font-family: "FontePrincipal", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background-color: var(--fundo);
+    color: var(--preto-suave);
+    line-height: 1.5;
+}
+
+/* =====================================================
+   HEADER
+   O "horizonte" vermelho + linha preta fina abaixo dele
+   é a referência visual à pokébola: metade colorida,
+   metade branca, separadas por uma linha central.
+   ===================================================== */
+header {
+    background-color: var(--branco);
+    border-top: 6px solid var(--vermelho-pokebola);
+    border-bottom: 3px solid var(--preto-suave);
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+}
+
+#slogan {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--preto-suave);
+}
+
+/* =====================================================
+   BARRA DE NAVEGAÇÃO
+   ===================================================== */
+#barra_pesquisa {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+#barra_pesquisa a {
+    text-decoration: none;
+    color: var(--preto-suave);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    background-color: var(--branco);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#barra_pesquisa a:hover {
+    background-color: var(--vermelho-pokebola);
+    border-color: var(--vermelho-pokebola);
+    color: var(--branco);
+}
+
+/* =====================================================
+   INTRODUÇÃO (texto sobre Pokémon na home)
+   ===================================================== */
+#texto_intro {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    color: var(--cinza-texto);
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   GRID DE CARTAS
+   Centralizado, com espaçamento uniforme
+   ===================================================== */
+.div_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+}
+
+/* Card individual: borda fina, cantos levemente arredondados */
+.cards {
+    width: 220px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background-color: var(--branco);
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cards:hover {
+    border-color: var(--vermelho-pokebola);
+    transform: translateY(-3px);
+}
+
+.cards a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Div reservada para a imagem do Pokémon (a acrescentar depois) */
+.imagem_card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--fundo);
+    border-bottom: 1px solid var(--borda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem_card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.titulo_card {
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.9rem 1rem 0.2rem;
+}
+
+.tipo {
+    display: inline-block;
+    margin: 0.4rem 1rem 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--vermelho-pokebola);
+}
+
+.cards p:not(.titulo_card):not(.tipo) {
+    padding: 0.6rem 1rem 1rem;
+    font-size: 0.85rem;
+    color: var(--cinza-texto);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+    color: var(--cinza-texto);
+    border-top: 1px solid var(--borda);
+}
