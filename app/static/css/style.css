@@ -1,5 +1,13 @@
 @font-face {
-    font-family: "FontePrincipal";
+    font-family: "PokemonHollow";
+    src: url("../fonts/PokemonHollow.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FonteTexto";
     src: url("../fonts/PokemonSolid.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
@@ -25,18 +33,12 @@
 }
 
 body {
-    font-family: "FontePrincipal", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: "FonteTexto", system-ui, -apple-system, "Segoe UI", sans-serif;
     background-color: var(--fundo);
     color: var(--preto-suave);
     line-height: 1.5;
 }
 
-/* =====================================================
-   HEADER
-   O "horizonte" vermelho + linha preta fina abaixo dele
-   é a referência visual à pokébola: metade colorida,
-   metade branca, separadas por uma linha central.
-   ===================================================== */
 header {
     background-color: var(--branco);
     border-top: 6px solid var(--vermelho-pokebola);
@@ -46,7 +48,8 @@ header {
 }
 
 #slogan {
-    font-size: 1.75rem;
+    font-family: "PokemonHollow", cursive;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--preto-suave);
