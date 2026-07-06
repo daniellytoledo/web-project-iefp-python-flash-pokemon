@@ -40,8 +40,7 @@ body {
 }
 
 header {
-    background-color: var(--branco);
-    border-top: 6px solid var(--vermelho-pokebola);
+    background-color: var(--vermelho-pokebola);
     border-bottom: 3px solid var(--preto-suave);
     padding: 2rem 1rem 1.5rem;
     text-align: center;
@@ -176,9 +175,10 @@ header {
    FOOTER
    ===================================================== */
 footer {
+    background-color: var(--vermelho-pokebola);
     text-align: center;
     padding: 1.5rem 1rem;
-    font-size: 0.8rem;
-    color: var(--cinza-texto);
+    font-size: 1rem;
+    color: black;
     border-top: 1px solid var(--borda);
 }
