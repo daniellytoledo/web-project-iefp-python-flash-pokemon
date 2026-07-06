@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from app.services.srv_pokemon_cards import lista_pokemon, detalhes_card, tbl_cards, tbl_types
+from app.services.srv_pokemon_cards import lista_pokemon, detalhes_card
 
 pokemon_cards = Blueprint('pokemon_cards', __name__)
 

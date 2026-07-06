@@ -12,4 +12,4 @@ def select_cards():
     return(resultado)
 
 if __name__ == "__main__":
-    pprint(select_cards)
+    pprint(select_cards())

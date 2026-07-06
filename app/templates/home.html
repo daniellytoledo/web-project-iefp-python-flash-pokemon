@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Pokémon Cards
+{% endblock %}
+
+{% block intro %}
+    <p id="texto_intro">
+        A palavra Pokémon é a contração das palavras inglesas Pocket (bolso) e Monster (monstro), significando literalmente "monstro de bolso". O termo faz referência às criaturas que são capturadas pelos treinadores e armazenadas em pequenas esferas portáteis, as Pokébolas.
+    </p>
+{% endblock %}
+
+{% block content %}
+    <div class="div_cards">
+        {% for pokemon in lista_pokemon %}
+            <div class="cards">
+                <a href="{{ url_for('detalhes_card', card_id=id_c) }}"></a>
+                <p class="titulo_card"> {{pokemon.name_c}} </p>
+                <p class="">  </p>
+            </div>
+    </div>
+{% endblock %}
