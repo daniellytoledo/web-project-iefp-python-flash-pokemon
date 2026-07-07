@@ -49,6 +49,19 @@ def select_card_id(card_id):
 
     return resultado
 
+def select_types():
+    conexao = conectar_pymysql()
+    cursor = conexao.cursor()
+
+    sql = "SELECT id_t, name_t FROM tbl_types ORDER BY name_t"
+    cursor.execute(sql)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    conexao.close()
+
+    return resultado
+
 
 if __name__ == "__main__":
     pprint(select_cards())

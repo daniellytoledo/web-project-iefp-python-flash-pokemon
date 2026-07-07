@@ -10,13 +10,14 @@
 
 {% block content %}
     <div>
-        <form method="POST" action="{{ url_for('pokemon_cads.add_card') }}">
+        <form method="POST"  enctype="multipart/form-data" action="{{ url_for('pokemon_cards.add_card') }}">
             <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required>
             <br>
             <input type="text" name="ftipo" placeholder="Tipo" class="class-inputs" required>
             <br>
             <textarea type="text" name="fdesc" placeholder="Descrição" class="class-inputs" required></textarea>
             <br>
+            <input type="file" name="fimg" accept="image/*">
             <input type="submit" value="adicionar">
             <input type="reset" value="apagar">
         </form>
