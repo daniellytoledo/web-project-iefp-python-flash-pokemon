@@ -43,6 +43,7 @@
     --degrade-er: linear-gradient(
                 135deg,
                 /* #7a0000, */
+                #5772F7,
                 #4b0082,
                 #ff1493
     );
@@ -50,14 +51,14 @@
     --vermelho-pokebola: #E3350D;
     --preto-suave: #1C1C1E;
     --branco: #FFFFFF;
-    --fundo: #F4F4F5;
+    --fundo: #010101;
     --borda: #E0E0E0;
     --cinza-texto: #6B6B70;
 }
 
 body {
     font-family: "FonteTexto", system-ui, -apple-system, "Segoe UI", sans-serif;
-    background-color: var(--fundo);
+    background: var(--degrade-er);
     color: var(--preto-suave);
     line-height: 1.5;
 }
@@ -117,7 +118,7 @@ header {
     margin: 2rem auto;
     padding: 0 1.5rem;
     text-align: center;
-    color: var(--cinza-texto);
+    color: white;
     font-size: 0.95rem;
 }
 
@@ -141,11 +142,12 @@ header {
     border-radius: 12px;
     background-color: var(--vermelho-pokebola);
     overflow: hidden;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(204, 204, 204, 0.716);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cards:hover {
-    border-color: var(--vermelho-pokebola);
+    border-color: yellow;
     transform: translateY(-3px);
 }
 
