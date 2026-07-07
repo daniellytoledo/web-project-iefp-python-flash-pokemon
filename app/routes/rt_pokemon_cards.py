@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from app.services.srv_pokemon_cards import lista_cards, detalhes_card
+from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos
 
 pokemon_cards = Blueprint('pokemon_cards', __name__)
 
@@ -19,7 +19,9 @@ def add_card():
         card = request.form.get("fcard")
         desc = request.form.get("fdesc")
         tipo = request.form.get("ftipo")
+
+
+    tipos = lista_tipos()
+    return render_template("adicionar.html", tipos=tipos)
     
-    # elif request.method == "GET":
-       # lista_tipos =    criar um serviço com os tipos, criar um template com as opções 
-       # return render_template("adicionar.html", tipos=lista_tipos)
+

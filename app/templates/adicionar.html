@@ -1,25 +1,37 @@
 {% extends "base.html" %}
 
 {% block title %}
-    adicionar pokemon
+adicionar pokemon
 {% endblock %}
 
 {% block intro %}
-    <p class="titulo_pages">Adicionar Pokémon</p>
+<p class="titulo_pages">Adicionar Pokémon</p>
 {% endblock %}
 
 {% block content %}
-    <div>
-        <form method="POST"  enctype="multipart/form-data" action="{{ url_for('pokemon_cards.add_card') }}">
-            <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required>
-            <br>
-            <input type="text" name="ftipo" placeholder="Tipo" class="class-inputs" required>
-            <br>
-            <textarea type="text" name="fdesc" placeholder="Descrição" class="class-inputs" required></textarea>
-            <br>
-            <input type="file" name="fimg" accept="image/*">
+<div class="pokebola_fundo">
+    <div class="pokebola_topo"></div>
+    <div class="pokebola_linha"></div>
+    <div class="pokebola_base"></div>
+
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('pokemon_cards.add_card') }}">
+        <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required>
+        <br>
+        <select name="ftipo" class="class-inputs" required>
+            <option value="" disabled selected>Selecione o tipo</option>
+            {% for tipo in tipos %}
+            <option value="{{ tipo.id_t }}">{{ tipo.name_t }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <textarea type="text" name="fdesc" placeholder="Descrição" class="class-inputs" required></textarea>
+        <br>
+        <input type="file" name="fimg" accept="image/*">
+
+        <div>
             <input type="submit" value="adicionar">
             <input type="reset" value="apagar">
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 {% endblock %}
