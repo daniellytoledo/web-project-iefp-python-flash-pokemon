@@ -69,6 +69,7 @@ header {
     border-bottom: 3px solid var(--preto-suave); */
     padding: 1rem 1rem 1.5rem;
     text-align: center;
+    box-shadow: 0 1px 8px rgba(204, 204, 204, 0.3);
 }
 
 #slogan {
@@ -310,5 +311,5 @@ footer {
     padding: 1rem 1rem;
     font-size: 1rem;
     color: white;
-    /* border-top: 1px solid var(--borda); */
+    box-shadow: 0 1px 8px rgba(204, 204, 204, 0.3);
 }

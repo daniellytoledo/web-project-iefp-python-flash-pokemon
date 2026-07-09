@@ -4,7 +4,7 @@ cd \wamp64\www\web-project-iefp-python-flask-pokemon
 PASSO A PASSO (
     1. criar env pelo cmd        -> python -m venv venv (só uma vez)
     2. ativar o venv             -> venv\Scripts\activate
-    3. instalar o flash pelo cmd -> pip install flash
+    3. instalar o flash pelo cmd -> pip install flask
     4. instalar pymysql pelo cmd -> pip install pymysql
     5. instalar dotenv pelo cmd  -> pip install python-dotenv
     6. criar a estrutura         -> (

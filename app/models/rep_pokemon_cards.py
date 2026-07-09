@@ -81,6 +81,25 @@ def insert_into_cards(nome, tipo, desc, img):
 
     return novo_id
 
+def update_card(card_id, nome, tipo, desc):
+    conexao = conectar_pymysql()
+    cursor =  conexao.cursor()
+
+    try:
+        sql = "UPDATE tbl_cards SET name_c=%s, id_t=%s, desc_c=%s WHERE id_c=%s"
+        cursor.execute(sql, (nome, tipo, desc, card_id))
+        conexao.commit()
+        return True
+    except Exception as e:
+        print(e)
+        conexao.rollback()
+        return False
+    
+    cursor.close()
+    conexao.close()
+
+
+
 
 if __name__ == "__main__":
     pprint(select_cards())
