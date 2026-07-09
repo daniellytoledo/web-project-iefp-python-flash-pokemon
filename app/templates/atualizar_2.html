@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Atualizar {{ dados.name_c }} {% endblock %}
+
+{% block intro %}
+    <p id="p_titulo_01">Atualizar Pokémon</p>
+{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('pokemon_cards.atualizar', card_id=dados.id_c) }}" class="pokebola_fundo">
+
+        <div class="pokebola_topo">
+            <input type="text" name="fnome" placeholder="Nome do Pokémon" class="class-inputs" required value="{{ dados.name_c }}">
+
+            <select name="ftipo" class="class-inputs" required>
+                {% for tipo in tipos %}
+                    <option value="{{ tipo.id_t }}" {% if tipo.id_t == dados.id_t %}selected{% endif %}>
+                        {{ tipo.name_t }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="pokebola_linha"></div>
+
+        <div class="pokebola_base">
+            <textarea name="fdesc" placeholder="Descrição" class="class-inputs" required>{{ dados.desc_c }}</textarea>
+
+            <div>
+                <input type="submit" value="atualizar">
+                <input type="reset" value="apagar">
+            </div>
+        </div>
+    </form>
+{% endblock %}

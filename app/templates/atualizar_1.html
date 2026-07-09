@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %} Atualizar Card {% endblock %}
+{% block title %} Atualizar Pokémon {% endblock %}
 
 {% block intro %}
-    <p>Atualizando Pokémon...</p>
+    <p id="p_titulo_01">Escolha o Pokémon que deseja atualizar:</p>
 {% endblock %}
 
 {% block content %}
-    <br>
     <div>
-        {% for pokemon in tbl_cards %}
-            <a href="{{ url_for('pokemon_cards.') }}"></a>
+        {% for pokemon in lista_pokemon %}
+            <a href="{{ url_for('pokemon_cards.atualizar', card_id=pokemon.id_c) }}" class="lista-link">
+                {{ pokemon.name_c }}
+            </a>
         {% endfor %}
     </div>
 {% endblock %}

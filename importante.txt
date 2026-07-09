@@ -37,13 +37,13 @@ PASSO A PASSO (
         │ 
         ├── .gitignore
 
-    7. Criar rotas, serviços, models (
+    7. Criar rep(models), serviços, rota (
 
-        rotas    -> [recebe opedido (recebem requisições HTTP, chamam os serviços e retornam a resposta para o cliente)]
+        models   -> [consulta/atualiza o banco (representam e manipulam a manipulação de dados da aplicação (as tabelas de dados), buscam ou salvam dados no banco)] 
 
         serviços -> [prepara o pedido (implementam a lógica do negócio e processam as regras da aplicação, ou seja, eles decidem o que fazer)]
 
-        models   -> [consulta/atualiza o banco (representam e manipulam a manipulação de dados da aplicação (as tabelas de dados), buscam ou salvam dados no banco)] 
+        rotas    -> [recebe opedido (recebem requisições HTTP, chamam os serviços e retornam a resposta para o cliente)]
 
         model → serviço → rota → template
 
