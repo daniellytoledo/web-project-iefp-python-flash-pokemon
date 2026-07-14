@@ -83,3 +83,5 @@ def pesquisa():
     string_pesquisada = request.form.get('fpesquisa')
     str_pesquisada, dados_pesquisados = pesquisa_card(string_pesquisada)
     return render_template("pesquisa.html", str=str_pesquisada, dados=dados_pesquisados)
+
+    

@@ -125,6 +125,38 @@ header {
     width:180px;
 }
 
+.logout-link{
+    font-family: sans-serif;
+}
+.logout-link a{
+    color:#23707a;
+}
+.logout-link a:hover{
+    color:#b63636;
+}
+
+.resultado-pesquisa{
+    background-color: var(--cor_cxinha);
+    padding:10px;
+    border-radius: 5px;
+    margin:10px 0;
+    font-family: sans-serif;
+}
+.resultado-pesquisa:hover{
+    background-color: var(--cor_cxinha2);
+}
+.resultado-pesquisa p{
+    color: white;
+    padding:0;
+    /* margin:0; */
+}
+.pesquisa-tit{
+    font-size: 1.1rem;
+}
+.pesquisa-desc{
+    font-size: 0.9rem;
+}
+
 #p_titulo_01 {
     font-family: "PokemonHollow", cursive;
     text-align: center;

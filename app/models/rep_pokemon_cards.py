@@ -112,16 +112,19 @@ def delete_card(id):
         conexao.rollback()
         return False
     
-def select_pesquisa(str):
+def select_pesquisa(texto):
     conexao = conectar_pymysql()
-    cursor  = conexao.cursor()
+    cursor = conexao.cursor()
 
-    pesquisa = "%"+str+"%"
-    sql      = "SELECT * FROM tbl_cards WHERE name_c LIKE %s OR desc_c LIKE %s ORDER BY nome_c ASC";
-    cursor.execute(sql, (pesquisa, pesquisa, pesquisa))
+    pesquisa = "%" + texto + "%"
+    sql = "SELECT * FROM tbl_cards WHERE name_c LIKE %s OR desc_c LIKE %s ORDER BY name_c ASC"
+    cursor.execute(sql, (pesquisa, pesquisa))
     resultado = cursor.fetchall()
 
-    return (resultado)
+    cursor.close()
+    conexao.close()
+
+    return resultado
 
 if __name__ == "__main__":
     pprint(select_cards())

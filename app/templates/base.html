@@ -22,12 +22,12 @@
             <a href="{{ url_for('pokemon_cards.add_card') }}">Adicionar</a>
             <a href="{{ url_for('pokemon_cards.lista_atualizar') }}">Atualizar</a>
             <a href="{{ url_for('pokemon_cards.lista_eliminar') }}">Eliminar</a>
+            <a href="">login</a>
             <form name="formPesquisa" action="{{ url_for('pokemon_cards.pesquisa') }}" method="POST"
                 enctype="application/x-www-form-urlencoded">
                 <input type="text" name="fpesquisa" class="input-pesquisa">
                 <input type="submit" value="pesquisa">
             </form>
-            <a href="">login</a>
         </div>
 
         {% block intro %}

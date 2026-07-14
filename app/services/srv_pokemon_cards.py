@@ -19,17 +19,17 @@ def atualizar_card(card_id, nome, tipo, desc):
 def eliminar_card(id):
     return delete_card(id)
 
-def pesquisa_card(str):
-    dados = select_pesquisa(str)
+def pesquisa_card(texto):
+    dados = select_pesquisa(texto)
     lista_final = []
     for card in dados:
         dadosPesquisados = {
-            "id"   : card['id_c'],
-            "nome" : card['name_c'],
-            "desc" : desc_resumo_pesq(card['desc_c'], str)
+            "id": card['id_c'],
+            "nome": card['name_c'],
+            "desc": desc_resumo_pesq(card['desc_c'], texto)
         }
         lista_final.append(dadosPesquisados)
-    return (str, lista_final)
+    return (texto, lista_final)
 
 def desc_resumo_pesq(desc, pesq):
     desc_1 = desc.lower()
