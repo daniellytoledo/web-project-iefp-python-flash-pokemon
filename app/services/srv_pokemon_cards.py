@@ -21,6 +21,15 @@ def eliminar_card(id):
 
 def pesquisa_card(str):
     dados = select_pesquisa(str)
+    lista_final = []
+    for card in dados:
+        dadosPesquisados = {
+            "id"   : card['id_c'],
+            "nome" : card['name_c'],
+            "desc" : desc_resumo_pesq(card['desc_c'], str)
+        }
+        lista_final.append(dadosPesquisados)
+    return (str, lista_final)
 
 def desc_resumo_pesq(desc, pesq):
     desc_1 = desc.lower()
