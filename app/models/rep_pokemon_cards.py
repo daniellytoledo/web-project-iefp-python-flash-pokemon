@@ -100,7 +100,7 @@ def update_card(card_id, nome, tipo, desc):
 
 def delete_card(id):
     conexao = conectar_pymysql()
-    cursor = conexao.cursor()
+    cursor  = conexao.cursor()
 
     try:
         sql    = "DELETE FROM tbl_cards WHERE id_c=%s"
@@ -111,7 +111,17 @@ def delete_card(id):
         print(e)
         conexao.rollback()
         return False
+    
+def select_pesquisa(str):
+    conexao = conectar_pymysql()
+    cursor  = conexao.cursor()
 
+    pesquisa = "%"+str+"%"
+    sql      = "SELECT * FROM tbl_cards WHERE name_c LIKE %s OR desc_c LIKE %s ORDER BY nome_c ASC";
+    cursor.execute(sql, (pesquisa, pesquisa, pesquisa))
+    resultado = cursor.fetchall()
+
+    return (resultado)
 
 if __name__ == "__main__":
     pprint(select_cards())

@@ -1,7 +1,7 @@
 import os
 from werkzeug.utils import secure_filename
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos, adicionar_pokemon, atualizar_card, eliminar_card
+from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos, adicionar_pokemon, atualizar_card, eliminar_card, pesquisa_card
 
 pokemon_cards = Blueprint('pokemon_cards', __name__)
 
@@ -77,3 +77,9 @@ def eliminar(card_id):
 
     dados = detalhes_card(card_id)
     return render_template("eliminar_2.html", dados=dados)
+
+@pokemon_cards.route("/pesquisa", methods=["POST"])
+def pesquisa():
+    string_pesquisada = request.form.get('fpesquisa')
+    str_pesquisada, dados_pesquisados = pesquisa_card(string_pesquisada)
+    return render_template("pesquisa.html", str=str_pesquisada, dados=dados_pesquisados)

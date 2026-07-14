@@ -118,6 +118,13 @@ header {
     cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
 
+.input-login{
+    width:80px;
+}
+.input-pesquisa{
+    width:180px;
+}
+
 #p_titulo_01 {
     font-family: "PokemonHollow", cursive;
     text-align: center;
