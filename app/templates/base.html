@@ -35,29 +35,32 @@
             <a href="{{ url_for('pokemon_cards.add_card') }}">Adicionar</a>
             <a href="{{ url_for('pokemon_cards.lista_atualizar') }}">Atualizar</a>
             <a href="{{ url_for('pokemon_cards.lista_eliminar') }}">Eliminar</a>
+        </div>
+
+        <div id="barra_secundaria">
             <form name="formPesquisa" action="{{ url_for('pokemon_cards.pesquisa') }}" method="POST"
                 enctype="application/x-www-form-urlencoded">
                 <input type="text" name="fpesquisa" class="input-pesquisa">
                 <input type="submit" value="pesquisa">
             </form>
-        </div>
-        <div id="div_login">
-            {% if user_logado %}
-            {# {% if session.get("id_utilizador") %} #}
-            <p class="logout-link">
-                Olá {{username}} -
-                <a href="{{ url_for('autenticacao.logout') }}" class="logout-link">Logout</a>
-            </p>
-            {% else %}
-            <form action=" {{ url_for('autenticacao.login') }} " name="formLogin" id="id_formLogin" method="POST"
-                enctype="application/x-www-form-urlencoded">
-                <div id="agrupaInputs">
-                    <input type="text" name="fuser" placeholder="user" class="input-login" required>
-                    <input type="password" name="fpass" placeholder="password" class="input-login" required>
-                </div>
-                <input type="submit" value="entrar">
-            </form>
-            {% endif %}
+
+            <div id="div_login">
+                {% if user_logado %}
+                <p class="logout-link">
+                    Olá {{ username }} -
+                    <a href="{{ url_for('autenticacao.logout') }}" class="logout-link">Logout</a>
+                </p>
+                {% else %}
+                <form action="{{ url_for('autenticacao.login') }}" name="formLogin" id="id_formLogin" method="POST"
+                    enctype="application/x-www-form-urlencoded">
+                    <div id="agrupaInputs">
+                        <input type="text" name="fuser" placeholder="user" class="input-login" required>
+                        <input type="password" name="fpass" placeholder="senha" class="input-login" required>
+                    </div>
+                    <input type="submit" value="entrar">
+                </form>
+                {% endif %}
+            </div>
         </div>
 
         {% block intro %}
