@@ -2,6 +2,7 @@ import os
 from werkzeug.utils import secure_filename
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from app.services.srv_pokemon_cards import lista_cards, detalhes_card, lista_tipos, adicionar_pokemon, atualizar_card, eliminar_card, pesquisa_card
+from app.utils.decorators import login_required, login_nivel_1_required
 
 pokemon_cards = Blueprint('pokemon_cards', __name__)
 
@@ -16,6 +17,7 @@ def detalhes(card_id):
     return render_template("detalhes.html", dados=dados)
 
 @pokemon_cards.route("/adicionar", methods=["GET", "POST"])
+@login_required
 def add_card():
     if request.method == "POST":
         nome = request.form.get("fnome")
@@ -39,11 +41,13 @@ def add_card():
     return render_template("adicionar.html", tipos=tipos)
 
 @pokemon_cards.route("/atualizar")
+@login_required
 def lista_atualizar():
     dados = lista_cards()
     return render_template("atualizar_1.html", lista_pokemon=dados)
 
 @pokemon_cards.route("/atualizar/<int:card_id>", methods=["GET", "POST"])
+@login_required
 def atualizar(card_id):
     if request.method == "POST":
         nome = request.form.get("fnome")
@@ -58,12 +62,14 @@ def atualizar(card_id):
     return render_template("atualizar_2.html", dados=dados, tipos=tipos)
 
 @pokemon_cards.route("/eliminar")
+@login_nivel_1_required
 def lista_eliminar():
     dados = lista_cards()
     return render_template("eliminar_1.html", lista_pokemon=dados)
 
 
 @pokemon_cards.route("/eliminar/<int:card_id>", methods=["GET", "POST"])
+@login_nivel_1_required
 def eliminar(card_id):
     if request.method == "POST":
         card_eliminado = eliminar_card(card_id)

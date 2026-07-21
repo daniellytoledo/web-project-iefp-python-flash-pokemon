@@ -7,7 +7,7 @@ def login_required(view):
     def wrapped_view(*args, **kwargs):
         if "id_utilizador" not in session:
             flash("A página que tentou aceder é protegida.", "flashErro")
-            return redirect(url_for("cidades.homepage"))  # homepage
+            return redirect(url_for("pokemon_cards.homepage"))  # homepage
         return view(*args, **kwargs)
     return wrapped_view
 
@@ -18,10 +18,10 @@ def login_nivel_1_required(view):
     def wrapped_view(*args, **kwargs):
         if "id_utilizador" not in session:
             flash("A página que tentou aceder é protegida.", "flashErro")
-            return redirect(url_for("cidades.homepage"))  # homepage
+            return redirect(url_for("pokemon_cards.homepage"))  # homepage
         elif session['nivel_utilizador'] != 1:
             flash("O seu login não permite acesso a esta página.", "flashErro")
-            return redirect(url_for("cidades.homepage"))  # homepage
+            return redirect(url_for("pokemon_cards.homepage"))  # homepage
         return view(*args, **kwargs)
     return wrapped_view
 

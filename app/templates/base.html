@@ -45,7 +45,7 @@
             </form>
 
             <div id="div_login">
-                {% if session.get("id_utilizador") %}
+                {% if "id_utilizador" in session %}
                 <p class="logout-link">
                     Olá {{ session.get("nome_utilizador") }} -
                     <a href="{{ url_for('autenticacao.logout') }}" class="logout-link">Logout</a>

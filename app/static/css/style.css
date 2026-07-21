@@ -137,6 +137,7 @@ header {
 #div_login {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #agrupaInputs {
@@ -163,15 +164,33 @@ header {
 }
 
 .logout-link {
-    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "FonteTexto", sans-serif;
+    font-size: 0.9rem;
+    color: white;
 }
 
 .logout-link a {
-    color: #23707a;
+    text-decoration: none;
+    color: var(--preto-suave);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    box-shadow: 0 1px 8px rgba(204, 204, 204, 0.418);
+    background-color: var(--branco);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .logout-link a:hover {
-    color: #b63636;
+    background-color: var(--vermelho-pokebola);
+    border-color: var(--vermelho-pokebola);
+    color: var(--branco);
+    cursor: url("../imgs/pokebola-cursor.svg") 16 16, pointer;
 }
 
 .resultado-pesquisa{
